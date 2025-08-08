@@ -29,7 +29,7 @@ pipeline {
     post {
         success {
             echo 'Build successful!'
-            mail bcc: '', body: 'Build succeeded!\n\n${env.BUILD_URL}', cc: 'mazhilnan@gmail.com', from: '', replyTo: '', subject: 'SUCCESS: $JOB_NAME #$BUILD_NUMBER', to: 'tech.athigaram@gmail.com'
+            emailext subject: "Build ${env.BUILD_STATUS} - ${env.JOB_NAME} #${env.BUILD_NUMBER}", body: "Details: ${env.BUILD_URL}", to: 'tech.athigaram@gmail.com'
         }
         failure {
             echo 'Build failed.'
