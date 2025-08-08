@@ -29,11 +29,11 @@ pipeline {
     post {
         success {
             echo 'Build successful!'
-            mail bcc: '', body: '', cc: 'mazhilnan@gmail.com', from: '', replyTo: '', subject: 'Jenkins Build status: Success', to: 'tech.athigaram@gmail.com'
+            mail bcc: '', body: 'Spring Boot App build is success', cc: 'mazhilnan@gmail.com', from: '', replyTo: '', subject: 'Jenkins Build status: Success', to: 'tech.athigaram@gmail.com'
         }
         failure {
             echo 'Build failed.'
-            mail bcc: '', body: '', cc: 'mazhilnan@gmail.com', from: '', replyTo: '', subject: 'Jenkins Build status: Failed', to: 'tech.athigaram@gmail.com'
+            mail bcc: '', body: 'Spring Boot App build is failed', cc: 'mazhilnan@gmail.com', from: '', replyTo: '', subject: 'Jenkins Build status: Failed', to: 'tech.athigaram@gmail.com'
         }
     }
 }
