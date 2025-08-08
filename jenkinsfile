@@ -28,12 +28,13 @@ pipeline {
 
     post {
         success {
-            echo 'Build successful!'
-            emailext subject: "Build ${env.BUILD_STATUS} - ${env.JOB_NAME} #${env.BUILD_NUMBER}", body: "Details: ${env.BUILD_URL}", to: 'tech.athigaram@gmail.com'
+            echo 'Build successful!'  
         }
         failure {
             echo 'Build failed.'
-            mail bcc: '', body: 'Build failed!\n\n${env.BUILD_URL}', cc: 'mazhilnan@gmail.com', from: '', replyTo: '', subject: 'FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}', to: 'tech.athigaram@gmail.com'
+            //mail bcc: '', body: 'Build failed!\n\n${env.BUILD_URL}', cc: 'mazhilnan@gmail.com', from: '', replyTo: '', subject: 'FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}', to: 'tech.athigaram@gmail.com'
         }
+        
+        emailext subject: "Build ${env.BUILD_STATUS} - ${env.JOB_NAME} #${env.BUILD_NUMBER}", body: "Details: ${env.BUILD_URL}", to: 'tech.athigaram@gmail.com'
     }
 }
