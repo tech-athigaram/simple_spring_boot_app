@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/tech-athigaram/simple_spring_boot_app.git'
+                git branch: '23BCS090_ROHINIPRIYA-M', url: 'https://github.com/tech-athigaram/simple_spring_boot_app.git'
             }
         }
 
